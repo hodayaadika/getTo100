@@ -1,7 +1,14 @@
 import { useState } from "react";
+import PlayerBlock from "../components/PlayerBlock";
 
 export default function (props) {
-  const [players, setPlayers] = useState(localStorage.getItem("inGamePlayers"));
+  //   const [players, setPlayers] = useState(localStorage.getItem("inGamePlayers"));
+  const [players, setPlayers] = useState([
+    { name: "jack", currNumber: 35, steps: 0 },
+    { name: "Daniel", currNumber: 70, steps: 0 },
+    { name: "Hodaya", currNumber: 10, steps: 0 },
+  ]);
+
   const [playerTurnIndex, setPlayerTurnIndex] = useState(0);
 
   function switchTurn() {
@@ -14,6 +21,7 @@ export default function (props) {
 
   return (
     <>
+      {console.log(players)}
       {players.map((player, index) => (
         <PlayerBlock
           player={player}
