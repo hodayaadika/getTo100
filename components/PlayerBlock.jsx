@@ -6,30 +6,33 @@ export default function PlayerBlock(props) {
   const [steps, setSteps] = useState(0);
   const [succeeded, setSucceeded] = useState(false);
 
+  function checkSucceeded(Number) {
+    if (Number === 100) {
+      setSucceeded(true);
+    }
+  }
   function addOne() {
     setCurrnumber(currNumber + 1);
     setSteps(steps + 1);
+    checkSucceeded(currNumber + 1);
   }
 
   function removeOne() {
     setCurrnumber(currNumber - 1);
     setSteps(steps + 1);
+    checkSucceeded(currNumber - 1);
   }
 
   function dubble() {
     setCurrnumber(currNumber * 2);
     setSteps(steps + 1);
+    checkSucceeded(currNumber * 2);
   }
 
   function split() {
     setCurrnumber(Math.floor(currNumber / 2));
     setSteps(steps + 1);
-  }
-
-  function checkSucceeded() {
-    if (currNumber >= 100) {
-      setSucceeded(true);
-    }
+    checkSucceeded(currNumber / 2);
   }
 
   if (!succeeded) {
@@ -44,7 +47,6 @@ export default function PlayerBlock(props) {
             className="action"
             onClick={() => {
               addOne();
-              checkSucceeded();
             }}
           >
             +1
@@ -53,7 +55,6 @@ export default function PlayerBlock(props) {
             className="action"
             onClick={() => {
               removeOne();
-              checkSucceeded();
             }}
           >
             -1
@@ -62,7 +63,6 @@ export default function PlayerBlock(props) {
             className="action"
             onClick={() => {
               dubble();
-              checkSucceeded();
             }}
           >
             *2
@@ -71,7 +71,6 @@ export default function PlayerBlock(props) {
             className="action"
             onClick={() => {
               split();
-              checkSucceeded();
             }}
           >
             /2
