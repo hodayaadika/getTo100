@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./PlayerBlock";
 
 export default function PlayerBlock(props) {
   const player = props.player;
@@ -40,7 +41,6 @@ export default function PlayerBlock(props) {
     setSucceeded(false);
     setCurrnumber(Math.floor(Math.random() * 99));
     setSteps(0);
-    //set succeed to false so new game starts.
   }
 
   function removePlayer() {
@@ -57,33 +57,41 @@ export default function PlayerBlock(props) {
         <h3>disabled: {player.disabled}</h3>
         <h3>
           <button
+            disabled={!props.isActive}
             className="action"
             onClick={() => {
               addOne();
+              props.switchTurn();
             }}
           >
             +1
           </button>
           <button
+            disabled={!props.isActive}
             className="action"
             onClick={() => {
               removeOne();
+              props.switchTurn();
             }}
           >
             -1
           </button>
           <button
+            disabled={!props.isActive}
             className="action"
             onClick={() => {
               dubble();
+              props.switchTurn();
             }}
           >
             *2
           </button>
           <button
+            disabled={!props.isActive}
             className="action"
             onClick={() => {
               split();
+              props.switchTurn();
             }}
           >
             /2

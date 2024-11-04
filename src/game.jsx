@@ -29,8 +29,8 @@ export default function (props) {
         <PlayerBlock
           player={player}
           setPlayers
-          onClick={() => switchTurn}
-          disabled={index !== playerTurnIndex}
+          switchTurn={switchTurn}
+          isActive={index === playerTurnIndex}
         />
       ))}
       <h1>You've entered enter game page</h1>;
