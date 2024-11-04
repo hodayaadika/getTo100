@@ -1,5 +1,6 @@
 import { useState } from "react";
 import PlayerBlock from "../components/PlayerBlock";
+import Result from "./components/Result";
 
 export default function (props) {
   let stringedPlayersList = JSON.stringify([
@@ -41,6 +42,7 @@ export default function (props) {
       ))}
       <h1>You've entered enter game page</h1>;
       <button onClick={props.changePage}>End game</button>
+      <Result name={stringedPlayersList} />
     </>
   );
 }
