@@ -45,11 +45,11 @@ export default function PlayerBlock(props) {
 
   function startPlayerGame() {
     return (
-      <div id="playerItem">
+      <div className="playerItem">
         <h1>{player.name}</h1>
         <h3>Your Number: {currNumber}</h3>
         <h3>Steps: {steps}</h3>
-        <h3>disabled: {player.disabled}</h3>
+        <h3>Pick your action:</h3>
         <h3>
           <button
             disabled={!props.isActive}
@@ -99,12 +99,16 @@ export default function PlayerBlock(props) {
     return startPlayerGame();
   } else {
     return (
-      <div>
+      <div className="playerItem">
         <h3>Wow {player.name}</h3>
         <h3>You succeeded in {steps} steps</h3>
         <h3>How would you like to continue?</h3>
-        <button onClick={startNewGame}>Play Again</button>
-        <button onClick={props.removePlayer}>Quit</button>
+        <button onClick={startNewGame} className="action">
+          Play Again
+        </button>
+        <button onClick={props.removePlayer} className="action">
+          Quit
+        </button>
       </div>
     );
   }

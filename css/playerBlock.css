@@ -1,8 +1,24 @@
-#playerItem {
+.playerItem {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   background-color: rgb(223, 174, 115);
   border: 5px solid black;
   border-radius: 20%;
   margin: 50px;
+  min-width: 200px;
+  max-width: 500px;
+}
+
+h3 {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 1.2em;
+  color: rgb(36, 12, 59);
+}
+
+.action {
+  margin: 8px;
+  background-color: rgb(196, 171, 219);
+  border: 2px solid black;
 }
