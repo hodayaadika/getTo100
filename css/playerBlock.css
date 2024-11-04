@@ -1,3 +1,8 @@
-* {
+#playerItem {
+  display: flex;
+  flex-direction: column;
   background-color: rgb(223, 174, 115);
+  border: 5px solid black;
+  border-radius: 20%;
+  margin: 50px;
 }

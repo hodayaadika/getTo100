@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-import "./PlayerBlock";
+import "../css/playerBlock.css";
 
 export default function PlayerBlock(props) {
   const player = props.player;
   const [currNumber, setCurrnumber] = useState(Math.floor(Math.random() * 99));
   const [steps, setSteps] = useState(0);
   const [succeeded, setSucceeded] = useState(false);
-
   function checkSucceeded(Number) {
     if (Number === 100) {
       setSucceeded(true);
@@ -46,7 +45,7 @@ export default function PlayerBlock(props) {
 
   function startPlayerGame() {
     return (
-      <div>
+      <div id="playerItem">
         <h1>{player.name}</h1>
         <h3>Your Number: {currNumber}</h3>
         <h3>Steps: {steps}</h3>
