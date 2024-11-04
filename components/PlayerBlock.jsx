@@ -49,7 +49,7 @@ export default function PlayerBlock(props) {
         <h1>{player.name}</h1>
         <h3>Your Number: {currNumber}</h3>
         <h3>Steps: {steps}</h3>
-        <h3>disabled: {player.disabled}</h3>
+        <h3>Pick your action:</h3>
         <h3>
           <button
             disabled={!props.isActive}

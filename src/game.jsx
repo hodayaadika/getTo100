@@ -2,12 +2,12 @@ import { useState } from "react";
 import PlayerBlock from "../components/PlayerBlock";
 
 export default function (props) {
-  let stringedPlayersList = JSON.stringify([
-    { name: "jack", currNumber: 35, steps: 0 },
-    { name: "Daniel", currNumber: 70, steps: 0 },
-    { name: "Hodaya", currNumber: 10, steps: 0 },
-  ]);
-  localStorage.setItem("inGamePlayers", stringedPlayersList);
+  //   let stringedPlayersList = JSON.stringify([
+  //     { name: "Jack", currNumber: 35, steps: 0 },
+  //     { name: "Daniel", currNumber: 70, steps: 0 },
+  //     { name: "Hodaya", currNumber: 10, steps: 0 },
+  //   ]);
+  //   localStorage.setItem("inGamePlayers", stringedPlayersList);
 
   const [players, setPlayers] = useState(
     JSON.parse(localStorage.getItem("inGamePlayers"))
@@ -39,7 +39,7 @@ export default function (props) {
           key={player.name}
         />
       ))}
-      <h1>You've entered enter game page</h1>;
+      <h1>You've entered enter game page</h1>
       <button onClick={props.changePage}>End game</button>
     </>
   );
