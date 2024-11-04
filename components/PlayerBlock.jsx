@@ -13,6 +13,13 @@ export default function PlayerBlock(props) {
       //save games ++ and update avg for name.
     }
   }
+
+  function startNewGame() {
+    setSucceeded(false);
+    setCurrnumber(Math.floor(Math.random() * 99));
+    setSteps(0);
+  }
+
   function addOne() {
     setCurrnumber(currNumber + 1);
     setSteps(steps + 1);
@@ -35,18 +42,6 @@ export default function PlayerBlock(props) {
     setCurrnumber(Math.floor(currNumber / 2));
     setSteps(steps + 1);
     checkSucceeded(currNumber / 2);
-  }
-
-  function startNewGame() {
-    setSucceeded(false);
-    setCurrnumber(Math.floor(Math.random() * 99));
-    setSteps(0);
-  }
-
-  function removePlayer() {
-    alert("entered remove Player");
-    //remove player from game.
-    // setPlayers(players.pop[the player that wants to be removed])
   }
 
   function startPlayerGame() {
@@ -110,7 +105,7 @@ export default function PlayerBlock(props) {
         <h3>You succeeded in {steps} steps</h3>
         <h3>How would you like to continue?</h3>
         <button onClick={startNewGame}>Play Again</button>
-        <button onClick={removePlayer}>Quit</button>
+        <button onClick={props.removePlayer}>Quit</button>
       </div>
     );
   }

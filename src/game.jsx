@@ -15,22 +15,27 @@ export default function (props) {
   const [playerTurnIndex, setPlayerTurnIndex] = useState(0);
 
   function switchTurn() {
-    if (playerTurnIndex < players.length) {
+    if (playerTurnIndex < players.length - 1) {
       setPlayerTurnIndex((prev) => prev + 1);
     } else {
       setPlayerTurnIndex(0);
     }
   }
 
+  function removePlayer(index) {
+    setPlayers((prev) => prev.toSpliced(index, 1));
+  }
   return (
     <>
-      <h1>You’ve entered inGamePlayer</h1>
+      <h1>Get To 100 (if you even can)</h1>
       {players.map((player, index) => (
         <PlayerBlock
           player={player}
           setPlayers
           switchTurn={switchTurn}
           isActive={index === playerTurnIndex}
+          removePlayer={() => removePlayer(index)}
+          key={player.name}
         />
       ))}
       <h1>You've entered enter game page</h1>;
