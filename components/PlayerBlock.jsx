@@ -9,6 +9,7 @@ export default function PlayerBlock(props) {
   function checkSucceeded(Number) {
     if (Number === 100) {
       setSucceeded(true);
+      //save games ++ and update avg for name.
     }
   }
   function addOne() {
@@ -35,13 +36,25 @@ export default function PlayerBlock(props) {
     checkSucceeded(currNumber / 2);
   }
 
-  if (!succeeded) {
+  function startNewGame() {
+    setSucceeded(false);
+    setCurrnumber(Math.floor(Math.random() * 99));
+    setSteps(0);
+    //set succeed to false so new game starts.
+  }
+
+  function removePlayer() {
+    alert("entered remove Player");
+    //remove player from game.
+  }
+
+  function startPlayerGame() {
     return (
       <div>
-        <h1>Player</h1>
+        <h1>{player.name}</h1>
         <h3>Your Number: {currNumber}</h3>
-        <h3>Name: {player.name}</h3>
         <h3>Steps: {steps}</h3>
+        <h3>disabled: {player.disabled}</h3>
         <h3>
           <button
             className="action"
@@ -76,6 +89,19 @@ export default function PlayerBlock(props) {
             /2
           </button>
         </h3>
+      </div>
+    );
+  }
+  if (!succeeded) {
+    return startPlayerGame();
+  } else {
+    return (
+      <div>
+        <h3>Wow {player.name}</h3>
+        <h3>You succeeded in {steps} steps</h3>
+        <h3>How would you like to continue?</h3>
+        <button onClick={startNewGame}>Play Again</button>
+        <button onClick={removePlayer}>Quit</button>
       </div>
     );
   }
