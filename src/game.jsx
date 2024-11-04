@@ -2,13 +2,16 @@ import { useState } from "react";
 import PlayerBlock from "../components/PlayerBlock";
 
 export default function (props) {
-  //   const [players, setPlayers] = useState(localStorage.getItem("inGamePlayers"));
-  const [players, setPlayers] = useState([
+  let stringedPlayersList = JSON.stringify([
     { name: "jack", currNumber: 35, steps: 0 },
     { name: "Daniel", currNumber: 70, steps: 0 },
     { name: "Hodaya", currNumber: 10, steps: 0 },
   ]);
+  localStorage.setItem("inGamePlayers", stringedPlayersList);
 
+  const [players, setPlayers] = useState(
+    JSON.parse(localStorage.getItem("inGamePlayers"))
+  );
   const [playerTurnIndex, setPlayerTurnIndex] = useState(0);
 
   function switchTurn() {
@@ -21,7 +24,7 @@ export default function (props) {
 
   return (
     <>
-      {console.log(players)}
+      <h1>You’ve entered inGamePlayer</h1>
       {players.map((player, index) => (
         <PlayerBlock
           player={player}

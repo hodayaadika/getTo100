@@ -1,14 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 
 export default function PlayerBlock(props) {
   const player = props.player;
+  const [currNumber, setCurrnumber] = useState(Math.floor(Math.random() * 99));
+  const [steps, setSteps] = useState(0);
 
+  function addOne() {
+    setCurrnumber(currNumber + 1);
+    setSteps(steps + 1);
+  }
+
+  function removeOne() {
+    setCurrnumber(currNumber - 1);
+    setSteps(steps + 1);
+  }
+
+  function dubble() {
+    setCurrnumber(currNumber * 2);
+    setSteps(steps + 1);
+  }
+
+  function split() {
+    setCurrnumber(currNumber / 2);
+    setSteps(steps + 1);
+  }
   return (
     <div>
-      <h1>You’ve entered inGamePlayer</h1>
-
+      <h1>Player</h1>
+      <h3>Your Number: {currNumber}</h3>
       <h3>Name: {player.name}</h3>
-      <h3>Steps: {player.currNumber}</h3>
+      <h3>Steps: {steps}</h3>
       <h3>
         <button
           className="action"
@@ -47,35 +68,10 @@ export default function PlayerBlock(props) {
   );
 }
 
-function addOne() {
-  console.log("props.setPlayers: ", props.setPlayers);
-  props.setPlayers((prev) => {
-    return prev.map((z) =>
-      z.name === props.player.name ? { ...z, currNumber: z.currNumber + 1 } : z
-    );
-  });
-}
+// function getPlayerCurrNumber() {
+//   let playersList = localStorage.getItem("inGampePlaters");
+//   let playerCurrNumber = playersList[].currNumber
+//   return playerCurrNumber;
 
-function removeOne() {
-  props.setPlayers((prev) => {
-    return prev.map((z) =>
-      z.name === props.player.name ? { ...z, currNumber: z.currNumber - 1 } : z
-    );
-  });
-}
-
-function dubble() {
-  props.setPlayers((prev) => {
-    return prev.map((z) =>
-      z.name === props.player.name ? { ...z, currNumber: z.currNumber * 2 } : z
-    );
-  });
-}
-
-function split() {
-  props.setPlayers((prev) => {
-    return prev.map((z) =>
-      z.name === props.player.name ? { ...z, currNumber: z.currNumber / 2 } : z
-    );
-  });
-}
+// }
+function sendPlayerCurrNumber() {}
