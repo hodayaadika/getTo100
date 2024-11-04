@@ -1,5 +1,18 @@
-import {useState} from "react";
 export default function InGamePlayers(props) {
- 
-  return <ul>{savedUsersPlayers.map(props.name)}</ul>;
+  // const mapPlayers=(players)=>{
+  //   return players.name;
+  // }
+  console.log("hi",props);
+  return (
+    <>
+      <h1>players</h1>
+      <ul>
+    {console.log('arrPlayers:000 ', props.arrPlayers)}
+    {props.arrPlayers !== null && props.arrPlayers.map((player) => (
+          <li key={player.name}>{player.name}</li>
+        ))} 
+      </ul>
+      
+    </>
+  );
 }
