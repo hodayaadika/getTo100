@@ -42,7 +42,7 @@ export default function (props) {
       ))}
       <h1>You've entered enter game page</h1>
       <button onClick={props.changePage}>End game</button>
-      <Result name={stringedPlayersList} />
+      {/* <Result name={stringedPlayersList} /> */}
     </>
   );
 }

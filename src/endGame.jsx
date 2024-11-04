@@ -1,12 +1,6 @@
-import PlayerBlock from "../components/PlayerBlock";
-
 export default function (props) {
-  const players = props.players;
   return (
     <>
-      {/* {players.map((player, index) => (
-        <PlayerBlock player={player} setPlayers onClick={() => removePlayer} />
-      ))} */}
       <h1>hurray</h1>
       <h1>You've Finished the game !!!</h1>
       <h1>...</h1>
