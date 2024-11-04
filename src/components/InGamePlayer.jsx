@@ -7,8 +7,8 @@ export default function InGamePlayers(props) {
     <>
       <h1>players</h1>
       <ul>
-    {console.log('arrPlayers:000 ', props.arrPlayers)}
-    {props.arrPlayers !== null && props.arrPlayers.map((player) => (
+    {console.log('arrPlayers:000 ', props.players)}
+    {props.players !== null && props.players.map((player) => (
           <li key={player.name}>{player.name}</li>
         ))} 
       </ul>
