@@ -46,6 +46,7 @@ export default function PlayerBlock(props) {
   function removePlayer() {
     alert("entered remove Player");
     //remove player from game.
+    // setPlayers(players.pop[the player that wants to be removed])
   }
 
   function startPlayerGame() {
