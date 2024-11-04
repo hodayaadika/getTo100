@@ -1,7 +1,6 @@
 import "./App.css";
 import React, { useState } from "react";
-import EnterPlayers from "./enterPlayers";
-
+import EnterPlayers from "./components/enterPlayers";
 import Game from "./game";
 import EndGame from "./endGame.jsx";
 
