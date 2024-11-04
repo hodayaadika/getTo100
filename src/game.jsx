@@ -24,8 +24,8 @@ export default function (props) {
 
   function removePlayer(index) {
     setPlayers((prev) => prev.toSpliced(index, 1));
-    switchTurn();
   }
+
   return (
     <>
       <h1>Get To 100 (if you even can)</h1>
